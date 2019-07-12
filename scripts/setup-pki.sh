@@ -9,7 +9,7 @@ echo "> setup pki ($ssh_user: $home)"
 
 curl -Ss https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub >> "$home/.ssh/authorized_keys"
 
-if [ ! -e "/vagrant/scripts/id_rsa.pub" ]; then
+if [ -e "/vagrant/scripts/id_rsa.pub" ]; then
    cat /vagrant/scripts/id_rsa.pub >> "$home/.ssh/authorized_keys"
 fi
 
